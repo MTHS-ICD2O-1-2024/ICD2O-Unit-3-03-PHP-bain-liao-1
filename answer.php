@@ -53,7 +53,7 @@
 
 
       // output
-      echo "The volume is: " . round($volumeOfSphere * 1,2) . " mm³.";
+      echo "For a sphere with a radius of " . $radiusOfSphere. "," . " the volume is: " . round($volumeOfSphere * 1,2) . " mm³.";
       ?>
       <br />
       <div class="page-content">
