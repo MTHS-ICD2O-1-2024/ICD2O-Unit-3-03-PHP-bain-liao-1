@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- ICS2O-Unit3-02-PHP -->
+<!-- ICS2O-Unit3-03-PHP -->
 <html lang="en-ca">
 
 <head>
@@ -33,10 +33,8 @@
   <title>Volume of a Sphere, with PHP</title>
 </head>
 
-
 <body>
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <script src="./js/script.js"></script>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
@@ -47,40 +45,19 @@
       <div class="right-image">
         <img src="./images/volume-of-sphere.png" alt="sphere" />
       </div>
-      <div class="page-content-formula">Formula</div>
-      <br />
-      <div class="page-content-formula">V = 4/3 π r³</div>
-      <br />
-      <div class="page-content">Please enter the radius of the sphere:</div>
-      <br />
-      <!-- Simple Textfield for integers-->
-      <form action="answer.php" method="GET">
-        <span>Radius:</span>
-        <div class="mdl-textfield mdl-js-textfield">
-          <!-- input pattern attribute -->
-          <input
-            class="mdl-textfield__input"
-            type="text"
-            pattern="-?[0-9]*(\.[0-9]+)?"
-            name="radius-of-sphere"
-            step="0.01" />
-          <!-- mdl-textfield__label -->
-          <label class="mdl-textfield__label" for="demo-input"></label>
-          <!-- class "mdl-textfield__error" -->
-          <span class="mdl-textfield__error">Input is not a number</span>
-        </div>
-        <span>mm</span>
-        <br />
-        <!-- Accent-colored raised button with ripple -->
-        <button
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          type="submit">
-          Calculate
-        </button>
-      </form>
+      <?php
+      $radiusOfSphere = $_GET["radius-of-sphere"];
+
+      // process
+      $volumeOfSphere = (4/3) * (M_PI) * ($radiusOfSphere ** 3);
+
+
+      // output
+      echo "The volume is: " . round($volumeOfSphere * 1,2) . " mm³.";
+      ?>
       <br />
       <div class="page-content">
-        <div name="volume"></div>
+        <a href="./index.php">Return ...</a>
       </div>
     </main>
   </div>
